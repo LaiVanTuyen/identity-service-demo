@@ -5,10 +5,12 @@ server:
 
 spring:
   datasource:
-    url: ${DBMS_CONNECTION:jdbc:postgresql://localhost:5432/identity_service_demo}
-    driverClassName: "org.postgresql.Driver"
-    password: ${DBMS_PASSWORD:251101}
-    username: ${DBMS_USERNAME:postgres}
+#    url: ${DBMS_CONNECTION:jdbc:postgresql://localhost:5432/identity_service_demo}
+#    driverClassName: "org.postgresql.Driver"
+    url: ${DBMS_CONNECTION:jdbc:mysql://localhost:3306/identity_service_demo}
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    password: ${DBMS_PASSWORD:Vti@1234}
+    username: ${DBMS_USERNAME:root}
   jpa:
     hibernate:
       ddl-auto: update

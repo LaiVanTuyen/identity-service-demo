@@ -36,7 +36,7 @@ public class ApplicationInitConfig {
     @ConditionalOnProperty(
             prefix = "spring",
             value = "datasource.driverClassName",
-            havingValue = "org.postgresql.Driver")
+            havingValue = "com.mysql.cj.jdbc.Driver")
     ApplicationRunner applicationRunner(UserRepository userRepository, RoleRepository roleRepository) {
         log.info("Initializing application.....");
         return args -> {
