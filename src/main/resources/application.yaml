@@ -9,7 +9,7 @@ spring:
 #    driverClassName: "org.postgresql.Driver"
     url: ${DBMS_CONNECTION:jdbc:mysql://localhost:3306/identity_service_demo}
     driverClassName: "com.mysql.cj.jdbc.Driver"
-    password: ${DBMS_PASSWORD:Vti@1234}
+    password: ${DBMS_PASSWORD:251101}
     username: ${DBMS_USERNAME:root}
   jpa:
     hibernate:
