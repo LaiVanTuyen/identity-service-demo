@@ -37,6 +37,7 @@ public class UserService {
     PasswordEncoder passwordEncoder;
 
 
+
     public UserResponse getMyInfo() {
         var context = SecurityContextHolder.getContext();
         String name = context.getAuthentication().getName();
