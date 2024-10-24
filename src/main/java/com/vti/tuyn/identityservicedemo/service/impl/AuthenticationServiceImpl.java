@@ -70,6 +70,9 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
+
+        log.info("SignKey: {}", SIGNER_KEY);
+
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         var user = userRepository
                 .findByUsername(request.getUsername())

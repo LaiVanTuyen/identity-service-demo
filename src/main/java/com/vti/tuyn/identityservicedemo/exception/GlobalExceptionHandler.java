@@ -1,7 +1,7 @@
 package com.vti.tuyn.identityservicedemo.exception;
 
 import com.vti.tuyn.identityservicedemo.dto.request.ApiResponse;
-import jakarta.validation.ConstraintViolation;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import javax.validation.ConstraintViolation;
 import java.util.Map;
 import java.util.Objects;
 

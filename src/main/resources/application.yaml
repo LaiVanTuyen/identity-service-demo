@@ -7,16 +7,16 @@ spring:
   datasource:
 #    url: ${DBMS_CONNECTION:jdbc:postgresql://localhost:5432/identity_service_demo}
 #    driverClassName: "org.postgresql.Driver"
-    url: ${DBMS_CONNECTION:jdbc:mysql://localhost:3306/identity_service_demo}
-    driverClassName: "com.mysql.cj.jdbc.Driver"
-    password: ${DBMS_PASSWORD:251101}
-    username: ${DBMS_USERNAME:root}
+    url: ${DBMS_CONNECTION}
+    driverClassName: ${DBMS_DRIVER}
+    password: ${DBMS_PASSWORD}
+    username: ${DBMS_USERNAME}
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO}
+    show-sql: ${JPA_SHOW_SQL}
 
 jwt:
-  signerKey: "1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij"
-  valid-duration: 3600 # in second
-  refreshable-duration: 36000 # in seconds
+  signerKey: ${JWT_SIGNERKEY}
+  valid-duration: ${JWT_VALID_DURATION} # in second
+  refreshable-duration: ${JWT_REFRESHABLE_DURATION} # in seconds

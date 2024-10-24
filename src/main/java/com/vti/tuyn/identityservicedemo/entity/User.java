@@ -1,11 +1,16 @@
 package com.vti.tuyn.identityservicedemo.entity;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.util.Set;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -17,7 +22,11 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     String id;
 
     @Column(name = "username", unique = true, columnDefinition = "VARCHAR(255)")
@@ -30,4 +39,5 @@ public class User {
 
     @ManyToMany
     Set<Role> roles;
+
 }

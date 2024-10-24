@@ -1,10 +1,11 @@
 package com.vti.tuyn.identityservicedemo.dto.request;
 
 import com.vti.tuyn.identityservicedemo.validator.DobConstraint;
-import jakarta.validation.constraints.Size;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Data

@@ -2,7 +2,6 @@ package com.vti.tuyn.identityservicedemo.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 
 @Getter
 public enum ErrorCode {
@@ -17,7 +16,7 @@ public enum ErrorCode {
     INVALID_DOB(1008, "Your age must be at least {min}", HttpStatus.BAD_REQUEST),
     ;
 
-    ErrorCode(int code, String message, HttpStatusCode statusCode) {
+    ErrorCode(int code, String message, HttpStatus statusCode) {
         this.code = code;
         this.message = message;
         this.statusCode = statusCode;
@@ -25,5 +24,5 @@ public enum ErrorCode {
 
     private final int code;
     private final String message;
-    private final HttpStatusCode statusCode;
+    private final HttpStatus statusCode;
 }
