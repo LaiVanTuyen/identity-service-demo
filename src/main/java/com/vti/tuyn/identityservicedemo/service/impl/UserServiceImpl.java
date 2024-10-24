@@ -1,4 +1,4 @@
-package com.vti.tuyn.identityservicedemo.service;
+package com.vti.tuyn.identityservicedemo.service.impl;
 
 import com.vti.tuyn.identityservicedemo.constant.PredefinedRole;
 import com.vti.tuyn.identityservicedemo.dto.request.UserCreationRequest;
@@ -11,6 +11,7 @@ import com.vti.tuyn.identityservicedemo.exception.ErrorCode;
 import com.vti.tuyn.identityservicedemo.mapper.UserMapper;
 import com.vti.tuyn.identityservicedemo.repository.RoleRepository;
 import com.vti.tuyn.identityservicedemo.repository.UserRepository;
+import com.vti.tuyn.identityservicedemo.service.IUserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -29,7 +30,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Slf4j
-public class UserService {
+public class UserServiceImpl implements IUserService {
     UserRepository userRepository;
     RoleRepository roleRepository;
     UserMapper userMapper;

@@ -3,7 +3,7 @@ package com.vti.tuyn.identityservicedemo.controller;
 import com.vti.tuyn.identityservicedemo.dto.request.ApiResponse;
 import com.vti.tuyn.identityservicedemo.dto.request.RoleRequest;
 import com.vti.tuyn.identityservicedemo.dto.response.RoleResponse;
-import com.vti.tuyn.identityservicedemo.service.RoleService;
+import com.vti.tuyn.identityservicedemo.service.impl.RoleServiceImpl;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,7 +18,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Slf4j
 public class RoleController {
-    RoleService roleService;
+    RoleServiceImpl roleService;
 
     @PostMapping
     ApiResponse<RoleResponse> create(@RequestBody RoleRequest request) {

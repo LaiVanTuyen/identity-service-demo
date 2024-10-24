@@ -1,10 +1,11 @@
-package com.vti.tuyn.identityservicedemo.service;
+package com.vti.tuyn.identityservicedemo.service.impl;
 
 import com.vti.tuyn.identityservicedemo.dto.request.PermissionRequest;
 import com.vti.tuyn.identityservicedemo.dto.response.PermissionResponse;
 import com.vti.tuyn.identityservicedemo.entity.Permission;
 import com.vti.tuyn.identityservicedemo.mapper.PermissionMapper;
 import com.vti.tuyn.identityservicedemo.repository.PermissionRepository;
+import com.vti.tuyn.identityservicedemo.service.IPermissionService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -17,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class PermissionService {
+public class PermissionServiceImpl implements IPermissionService {
     PermissionRepository permissionRepository;
     PermissionMapper permissionMapper;
 

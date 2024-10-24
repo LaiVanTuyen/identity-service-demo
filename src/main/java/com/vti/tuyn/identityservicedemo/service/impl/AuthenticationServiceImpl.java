@@ -1,4 +1,4 @@
-package com.vti.tuyn.identityservicedemo.service;
+package com.vti.tuyn.identityservicedemo.service.impl;
 
 import com.vti.tuyn.identityservicedemo.dto.request.AuthenticationRequest;
 import com.vti.tuyn.identityservicedemo.dto.request.IntrospectRequest;
@@ -17,6 +17,7 @@ import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
+import com.vti.tuyn.identityservicedemo.service.IAuthenticationService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -39,7 +40,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class AuthenticationService {
+public class AuthenticationServiceImpl implements IAuthenticationService {
     UserRepository userRepository;
     InvalidatedTokenRepository invalidatedTokenRepository;
 
@@ -153,11 +154,11 @@ public class AuthenticationService {
 
         Date expiryTime = (isRefresh)
                 ? new Date(signedJWT
-                        .getJWTClaimsSet()
-                        .getIssueTime()
-                        .toInstant()
-                        .plus(REFRESHABLE_DURATION, ChronoUnit.SECONDS)
-                        .toEpochMilli())
+                .getJWTClaimsSet()
+                .getIssueTime()
+                .toInstant()
+                .plus(REFRESHABLE_DURATION, ChronoUnit.SECONDS)
+                .toEpochMilli())
                 : signedJWT.getJWTClaimsSet().getExpirationTime();
 
         var verified = signedJWT.verify(verifier);

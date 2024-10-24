@@ -3,7 +3,7 @@ package com.vti.tuyn.identityservicedemo.controller;
 import com.vti.tuyn.identityservicedemo.dto.request.*;
 import com.vti.tuyn.identityservicedemo.dto.response.AuthenticationResponse;
 import com.vti.tuyn.identityservicedemo.dto.response.IntrospectResponse;
-import com.vti.tuyn.identityservicedemo.service.AuthenticationService;
+import com.vti.tuyn.identityservicedemo.service.impl.AuthenticationServiceImpl;
 import com.nimbusds.jose.JOSEException;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.text.ParseException;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AuthenticationController {
-    AuthenticationService authenticationService;
+    AuthenticationServiceImpl authenticationService;
 
     @PostMapping("/token")
     ApiResponse<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {

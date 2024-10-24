@@ -4,7 +4,7 @@ import com.vti.tuyn.identityservicedemo.dto.request.ApiResponse;
 import com.vti.tuyn.identityservicedemo.dto.request.UserCreationRequest;
 import com.vti.tuyn.identityservicedemo.dto.request.UserUpdateRequest;
 import com.vti.tuyn.identityservicedemo.dto.response.UserResponse;
-import com.vti.tuyn.identityservicedemo.service.UserService;
+import com.vti.tuyn.identityservicedemo.service.impl.UserServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Slf4j
 public class UserController {
-    UserService userService;
+    UserServiceImpl userService;
 
     @PostMapping
     ApiResponse<UserResponse> createUser(@RequestBody @Valid UserCreationRequest request) {

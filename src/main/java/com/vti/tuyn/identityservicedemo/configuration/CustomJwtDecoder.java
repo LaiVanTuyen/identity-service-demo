@@ -1,7 +1,7 @@
 package com.vti.tuyn.identityservicedemo.configuration;
 
 import com.vti.tuyn.identityservicedemo.dto.request.IntrospectRequest;
-import com.vti.tuyn.identityservicedemo.service.AuthenticationService;
+import com.vti.tuyn.identityservicedemo.service.impl.AuthenticationServiceImpl;
 import com.nimbusds.jose.JOSEException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,7 +22,7 @@ public class CustomJwtDecoder implements JwtDecoder {
     private String signerKey;
 
     @Autowired
-    private AuthenticationService authenticationService;
+    private AuthenticationServiceImpl authenticationService;
 
     private NimbusJwtDecoder nimbusJwtDecoder = null;
 

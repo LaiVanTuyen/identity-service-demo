@@ -1,10 +1,11 @@
-package com.vti.tuyn.identityservicedemo.service;
+package com.vti.tuyn.identityservicedemo.service.impl;
 
 import com.vti.tuyn.identityservicedemo.dto.request.RoleRequest;
 import com.vti.tuyn.identityservicedemo.dto.response.RoleResponse;
 import com.vti.tuyn.identityservicedemo.mapper.RoleMapper;
 import com.vti.tuyn.identityservicedemo.repository.PermissionRepository;
 import com.vti.tuyn.identityservicedemo.repository.RoleRepository;
+import com.vti.tuyn.identityservicedemo.service.IRoleService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class RoleService {
+public class RoleServiceImpl implements IRoleService {
     RoleRepository roleRepository;
     PermissionRepository permissionRepository;
     RoleMapper roleMapper;

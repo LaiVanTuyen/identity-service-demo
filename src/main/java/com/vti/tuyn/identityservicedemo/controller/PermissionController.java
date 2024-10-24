@@ -3,7 +3,7 @@ package com.vti.tuyn.identityservicedemo.controller;
 import com.vti.tuyn.identityservicedemo.dto.request.ApiResponse;
 import com.vti.tuyn.identityservicedemo.dto.request.PermissionRequest;
 import com.vti.tuyn.identityservicedemo.dto.response.PermissionResponse;
-import com.vti.tuyn.identityservicedemo.service.PermissionService;
+import com.vti.tuyn.identityservicedemo.service.impl.PermissionServiceImpl;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,7 +18,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Slf4j
 public class PermissionController {
-    PermissionService permissionService;
+    PermissionServiceImpl permissionService;
 
     @PostMapping
     ApiResponse<PermissionResponse> create(@RequestBody PermissionRequest request) {
