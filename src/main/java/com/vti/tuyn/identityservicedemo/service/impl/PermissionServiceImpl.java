@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +31,7 @@ public class PermissionServiceImpl implements IPermissionService {
 
     public List<PermissionResponse> getAll() {
         var permissions = permissionRepository.findAll();
-        return permissions.stream().map(permissionMapper::toPermissionResponse).toList();
+        return permissions.stream().map(permissionMapper::toPermissionResponse).collect(Collectors.toList());
     }
 
     public void delete(String permission) {

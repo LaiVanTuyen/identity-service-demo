@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -84,7 +85,7 @@ public class UserServiceImpl implements IUserService {
     @PreAuthorize("hasRole('ADMIN')")
     public List<UserResponse> getUsers() {
         log.info("In method get Users");
-        return userRepository.findAll().stream().map(userMapper::toUserResponse).toList();
+        return userRepository.findAll().stream().map(userMapper::toUserResponse).collect(Collectors.toList());
     }
 
     @PreAuthorize("hasRole('ADMIN')")

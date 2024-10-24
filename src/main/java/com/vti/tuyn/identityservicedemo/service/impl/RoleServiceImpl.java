@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -35,7 +36,7 @@ public class RoleServiceImpl implements IRoleService {
     }
 
     public List<RoleResponse> getAll() {
-        return roleRepository.findAll().stream().map(roleMapper::toRoleResponse).toList();
+        return roleRepository.findAll().stream().map(roleMapper::toRoleResponse).collect(Collectors.toList());
     }
 
     public void delete(String role) {
